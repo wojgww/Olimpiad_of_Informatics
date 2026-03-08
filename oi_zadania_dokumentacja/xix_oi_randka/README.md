@@ -1,0 +1,8 @@
+Link do zadania
+https://szkopul.edu.pl/problemset/problem/gIvRmapl7sX6di87092Rmjdw/site/?key=statement
+
+Rozwiązanie:
+Problem sprowadza się do znalezienia najbliższego wspólnego wierzchołka minimalizując maksimum odległości od dwóch wierzchołków. Wykorzystamy do tego rozwiązania algorytm LCA. Na początku zidentyfikujemy słabe składowe (zredukujemy skierowanie grafu i odpalimy wielokrotnego BFS-a dla wierzchołków rozłącznych), żeby weryfikować czy w ogóle pomiędzy dwoma wierzchołkami istnieje połącznie. Warto zauważyć, że z jednego wierzchołka wychodzi tylko jedna krawędź, czyli jeżeli istnieje cykl w spójnej składowej, to jest to CYKL PROSTY, do którego mogą wchodzić tylko inne wierzchołki. Ważną obserwacją jest również to, że w każdej ścieżce będzie istniaj cykl prosty, ponieważ rozważmy wierzchołek v na ścieżce, wierzchołek może albo wskazywać na poprzedni wierzchołek na ścieżce tworząc cykl prosty, albo może wskazywać na zupełnie nowy wierzchołek u i potem będzie powtarzany proces. Skoro ten proces nie może ciągnąć się w nieskończoność, to w każdej ścieżce musi istnieć cykl. Kiedy już będziemy mieli cykle przypisujemy im pozycje na cyklu. Potem tworzymy LCA na transponowanym grafie i zakorzeniamy go w elementach cyklu (robimy to dla wszystkich cykli). Na zapytania będziemy odpowiadać w czasie logarytmicznym (LCA odległość od cyklu) + stała obliczenia odległości wierzchołków na cyklu.
+
+Złożoność:
+O(n + k * log(n))

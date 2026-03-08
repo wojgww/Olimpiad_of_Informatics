@@ -6,7 +6,7 @@ They include algorithms such as:
 - *Tree Flattening*  
 - *LCA* (Lowest Common Ancestor)  
 - *MST* (Minimal Spanning Tree)  
-- *Kosaraju's algorithm* (finding Strongly connected components)  
+- *Kosaraju's algorithm* (finding Strongly Connected Components)  
 - *Topological Sort*  
 - finding *Centroid*  
 - *Matrix* Multiplication and Powering  
